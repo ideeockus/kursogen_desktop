@@ -1,0 +1,24 @@
+{
+  "name": "kursogen-desktop",
+  "version": "1.0.0",
+  "description": "desktop kursogen application (iret 4 semestr)",
+  "main": "main.js",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url kursogen/sass/kursogen_bulma_styles.scss kursogen/css/kursogen_bulma_styles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "electron ."
+    
+  },
+  "author": "radmirkus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github.com/ideecokus/kursogen-desktop"
+  },
+  "dependencies": {
+    "bulma": "^0.9.0",
+    "electron": "^9.2.1",
+    "node-sass": "^4.14.1",
+    "vue": "^2.6.12"
+  }
+}

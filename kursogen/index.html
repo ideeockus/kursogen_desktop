@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <!--meta http-equiv="Content-Type" content="text/html; charset=utf-8"-->
+  <title>Kursogen</title>
+  <!--link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"-->
+  <!--link rel="stylesheet" type="text/css" href="styles.css"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/kursogen_bulma_styles.css">
+ </head>
+ <body class="has-background-primary">
+    <div id="app">
+        <div class="section" id="top has-background-primary">
+            <div class="container px-3">
+                <!--div id="title_div">
+                    <span id="title">KURSOGEN</span>
+                    <img src="images/jlogo.png" id="logo">
+                </div-->
+                <section class="hero is-primary">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="level">
+                                <div class="level-left">
+                                    <div class="level-item">
+                                        <p class="title has-text-danger">
+                                        KURSOGEN
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="level-right">
+                                    <div class="level-item">
+                                        <figure class="image is-64x64">
+                                            <img src="images/jlogo.png" id="logo">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </section>
+                <div class="container box">
+                <!--div class="container box"-->
+
+                    <div class="columns is-mobile">
+                        <input class="input has-text-centered column" type="text" placeholder="Iэ" id="Ie_var" class="var_input">
+                        <span class="label column is-2">мА</span>
+                        
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input column" type="text" placeholder="T" id="T_var" class="var_input"> 
+                        <span class="label column is-2">К</span>
+                    </div>
+
+                    <div class="columns is-mobile">
+                        <input class="input column" type="text" placeholder="Nб" id="Nb_var" class="var_input">
+                        <span class="label column is-2">*10^</span>
+                        <input class="input column" type="text" placeholder="порядок" id="Nb_var_o" class="var_input">
+                        <span class="label column is-2">см<sup>-3</sup></span>
+                    </div>
+
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Nэ" id="Ne_var" class="var_input"> 
+                        <span class="label column is-2">*10^</span>
+                        <input class="input" type="text" placeholder="порядок" id="Ne_var_o" class="var_input">
+                        <span class="label column is-2">см<sup>-3</sup></span>
+                    </div>
+
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Nк" id="Nk_var" class="var_input"> 
+                        <span class="label column is-2">*10^</span>
+                        <input class="input" type="text" placeholder="порядок" id="Nk_var_o" class="var_input">
+                        <span class="label column is-2">см<sup>-3</sup></span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="μn" id="mn_var" class="var_input"> 
+                        <span class="label column is-2">см<sup>2</sup>/В*с</span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="μp" id="mp_var" class="var_input"> 
+                        <span class="label column is-2">см<sup>2</sup>/В*с</span>
+                    </div>
+
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="τ" id="tau_var" class="var_input"> 
+                        <span class="label column is-2">мкс</span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Wб" id="Wb_var" class="var_input"> 
+                        <span class="label column is-2">мкм</span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Xк" id="Xk_var" class="var_input"> 
+                        <span class="label column is-2">мкм</span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Xэ" id="Xe_var" class="var_input"> 
+                        <span class="label column is-2">мкм</span>
+                    </div>
+
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="S" id="S_var" class="var_input"> 
+                        <span class="label column is-2">*10^</span>
+                        <input class="input" type="text" placeholder="порядок" id="S_var_o" class="var_input">
+                        <span class="label column is-2">см<sup>2</sup></span>
+                    </div>
+                    <div class="columns is-mobile">
+                        <input class="input" type="text" placeholder="Vбк" id="Vbk_var" class="var_input"> 
+                        <span class="label column is-2">В</span>
+                    </div>
+                <!--/div-->
+                    <div class="level is-mobile">
+                        <div class="level-left">
+                            <button class="button is-outlined level-item" v-on:click="switch_pp" class="var_input">{{pp_material}}</button>
+                        </div>
+                        <div class="level-right">
+                            <button class="button is-outlined level-item" v-on:click="do_practice" class="top_btn">Посчитать</button>
+                        </div>
+                    </div>
+                    <p class="has-text-warning">{{message}}</p>
+                    
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="section" id="bottom">
+            <div class="container content centered centered_bot">
+                <pre>
+                    <p class="practice_text" id="practice_text"></p>
+                    <canvas id="practice_graphic" width="200" height="50"></canvas>
+                </pre>
+            </div>
+            <textarea style="display: none;" id="copy_text"></textarea>
+            <div class="level is-pulled-right">
+                <button class="level-item button is-hidden" v-on:click="copy_text_to_bf" id="copy_text_button" class="aftergen_button">Скопировать для word</button>
+                <button class="level-item button is-hidden" v-on:click="open_graphic" id="open_graphic_button" class="aftergen_button">Масштабируемый график</button>
+                <button class="level-item button is-hidden" v-on:click="get_graphic_func" id="graphic_func_button" class="aftergen_button">Функция для графика</button>
+            </div>
+        </div>
+    </div>
+    <div class="notification_div is-hidden" id="notification_div"><p id="notification_text_p"></p><button class="button" id="notification_button">Закрыть</button></div>
+ </body>
+ <script src="../node_modules/vue/dist/vue.min.js"></script>
+ <!--script src="vue.js"></script-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+  <script src="scripts.js"></script>
+</html>
