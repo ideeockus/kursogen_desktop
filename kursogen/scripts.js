@@ -33,7 +33,7 @@ function getGETParams() {
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Введите данные',
+    message: '', //Введите данные (info after OK button)
     pp_material: "Германий",
     pp_material_E: 16,
     pp_material_ni: 1.5e+19,
@@ -327,6 +327,7 @@ function do_practice() {
         Jk_text+"\n\n"+Vbe_text+"\n\n"+Vbk_text;
     let practice_text = document.getElementById('practice_text');
     practice_text.innerHTML = goten_vars+"\n\n\n"+result; //katex.renderToString(result)
+    document.getElementById('practice_text_div').classList.remove("is-hidden")
 
     //katex.render("c = \\pm\\sqrt{a^2 + b^2}", practice_text);
     //katex.renderToString("c = \\pm\\sqrt{a^2 + b^2}");
@@ -410,10 +411,12 @@ function open_graphic() {
     //console.log(aN+" "+Ie+" "+Jko+" "+ft);
     //let graphic_url = "https://umath.ru/calc/graph/?&scale=5;2&func="+`(${e2p(aN)}*${e2p(Ie)})-(${e2p(Jko)}*(exp((x)/${e2p(ft)})-1));` // ^ = 5e
     window.open(this.graphic_url);
+    /*const { shell } = require('electron')
+    shell.openExternal(graphic_url)*/
 }
 
 function get_graphic_func() {
-    let text = `Вы можете удобно настроить график на <a href="http://yotx.ru/">yotx.ru</a> \
+    let text = `Вы можете удобно настроить график на <strong>yotx.ru</strong>. \
     функция: ${this.graphic_func}`
     notification(text, "Закрыть");
 }
@@ -422,10 +425,11 @@ function notification(text, button_text) {
     let notification_div = document.getElementById("notification_div");
     let notification_text_p = document.getElementById("notification_text_p");
     let notification_button = document.getElementById("notification_button");
-    notification_div.style.display = "block";
+    //notification_div.style.display = "block";
+    notification_div.classList.add("is-active")
     notification_text_p.innerHTML = text;
     notification_button.innerHTML = button_text;
-    notification_button.addEventListener("click", (event)=>notification_div.style.display="none");
+    notification_button.addEventListener("click", (event)=>notification_div.classList.remove("is-active"));
     console.log("notification: "+text);
 }
 

@@ -1,0 +1,13 @@
+body {
+    overflow-y: hidden; /* hide vertical scrollbar*/
+}
+
+/*::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}*/
+
+.box {
+    border: 4 solid red;
+}
+/*hsl(7, 96%, 65%)*/

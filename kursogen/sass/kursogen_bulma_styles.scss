@@ -9,16 +9,31 @@ $success: hsl(126, 42%, 36%);
 $warning: hsl(38, 94%, 36%);
 $danger: hsl(4, 90%, 58%);
 
-//custom
-$color_amazon: hsl(149, 28%, 35%);
-$color_sidecar: hsl(55, 71%, 88%);
-$color_bottle_green: hsl(155, 72%, 7%);
-$color_sun: hsl(38, 98%, 53%);
-$color_persimmon: hsl(7, 96%, 65%);
+//custom colors
+$amazon: hsl(149, 28%, 35%);
+$sidecar: hsl(55, 71%, 88%);
+$bottle_green: hsl(155, 72%, 7%);
+$sun: hsl(38, 98%, 53%);
+$persimmon: hsl(7, 96%, 65%);
+
+$amazon-invert: findColorInvert($amazon);
+$sidecar-invert: findColorInvert($sidecar);
+$bottle_green-invert: findColorInvert($bottle_green);
+$sun-invert: findColorInvert($sun);
+$persimmon-invert: findColorInvert($persimmon);
+
+$custom-colors: ("amazon": ($amazon, $amazon-invert),
+    "persimmon": ($persimmon, $persimmon-invert),
+    "sidecar": ($sidecar, $sidecar-invert),
+    "bottle_green": ($bottle_green, $bottle_green-invert),
+    "sun": ($sun, $sun-invert));
 
 
-//bulma vars
-$box-color: hsl(7, 96%, 65%);
+//customs
+$button-focus-color: $sun;
+$input-background-color: $sun;
+$input-border-color: $sun;
+$input-color: $primary;
 
 
 // Import only what you need from Bulma
